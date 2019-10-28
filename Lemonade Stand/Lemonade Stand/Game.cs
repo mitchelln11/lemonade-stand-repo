@@ -23,6 +23,10 @@ namespace Lemonade_Stand
 
             Store store = new Store();
             store.AmountOfLemons();
+            store.AmountOfSugarCubes();
+            store.AmountOfIceCubes();
+            store.AmountOfCups();
+            Console.ReadLine();
 
             days = new List<Day>();
             Day day = new Day("Monday");
