@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Lemon
+    class Lemon : Item
     {
+        //member variables (Has A)
+        private double lemonPrice;
+
+        //constructor (Spawner)
+        public Lemon()
+        {
+            lemonPrice = 0.10;
+        }
+
+        //member methods (Can Do)
     }
 }

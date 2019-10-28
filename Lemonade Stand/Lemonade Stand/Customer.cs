@@ -8,5 +8,7 @@ namespace Lemonade_Stand
 {
     class Customer
     {
+        private List<string> names;
+        public string name;
     }
 }

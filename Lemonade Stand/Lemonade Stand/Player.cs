@@ -19,5 +19,10 @@ namespace Lemonade_Stand
         //constructor (Spawner)
 
         //member methods (Can Do)
+        public void askName()
+        {
+            Console.WriteLine("What is your name?");
+            name = Console.ReadLine().Replace(" ", "").Trim();
+        }
     }
 }
