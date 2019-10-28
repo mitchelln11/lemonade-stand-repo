@@ -14,7 +14,7 @@ namespace Lemonade_Stand
         private double pricePerIceCube;
         private double pricePerCup;
         private int lemonAmountPrompt;
-        private double lemonTotal;
+        public double lemonTotal;
 
         //constructor (Spawner)
         public Store()
@@ -26,22 +26,19 @@ namespace Lemonade_Stand
         }
 
         //member methods (Can Do)
-        public void ProductToPurchase()
+        public void AmountOfLemons()
         {
-            Console.WriteLine("What product would you like to purchase?");
+            Player player = new Player();
+            player.askName();
+            Console.WriteLine("How many lemons do you want to buy " + player.name + "? They are " + pricePerLemon + " each.");
+            lemonAmountPrompt = Convert.ToInt32(Console.ReadLine());
+            LemonMath();
         }
 
-        public void AmountOfProduct(int amount)
+        public void LemonMath()
         {
-            Console.WriteLine("How many lemons do you want to buy? They are " + pricePerLemon + " each.");
-            amount = Convert.ToInt32(Console.ReadLine());
-            productMath();
-        }
-
-        public void productMath(int total, int amount, int price)
-        {
-            total = amount * price;
-            Console.WriteLine("You purchased " + amount + " for a total of " + total);
+            lemonTotal = lemonAmountPrompt * pricePerLemon;
+            Console.WriteLine(lemonTotal);
             Console.ReadLine();
         }
     }

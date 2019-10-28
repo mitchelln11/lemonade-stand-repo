@@ -20,7 +20,6 @@ namespace Lemonade_Stand
         public void runGame()
         {
             player = new Player();
-            player.askName();
 
             Store store = new Store();
             store.AmountOfLemons();
