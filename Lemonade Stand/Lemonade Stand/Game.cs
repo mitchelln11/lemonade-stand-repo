@@ -19,6 +19,11 @@ namespace Lemonade_Stand
         //member methods (Can Do)
         public void runGame()
         {
+            Console.WriteLine("You are tasked to purchase ingredients for a lemonade stand. \n" +
+                "Apply your purchased ingredients to create the right recipe for success. \n" +
+                "Weather will be a factor. " +
+                "You have 7 days to turn a profit. \n");
+
             player = new Player();
             player.askName();
 
@@ -29,7 +34,7 @@ namespace Lemonade_Stand
             store.AmountOfCups(player);
             Console.ReadLine();
 
-            //days = new List<Day>();
+            
             //Day day = new Day("Monday");
             //days.Add(day);
             //Weather weather = new Weather();

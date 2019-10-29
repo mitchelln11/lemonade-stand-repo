@@ -9,13 +9,15 @@ namespace Lemonade_Stand
     class Lemon : Item
     {
         //member variables (Has A)
-        private double lemonPrice;
+        //private double lemonPrice;
+        //public int daysToSpoilage;
 
         //constructor (Spawner)
-        public Lemon()
-        {
-            lemonPrice = 0.10;
-        }
+        //public Lemon()
+        //{
+        //    daysToSpoilage = 3;
+        //    lemonPrice = 0.10;
+        //}
 
         //member methods (Can Do)
     }
