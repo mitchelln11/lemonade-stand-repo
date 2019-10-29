@@ -14,7 +14,7 @@ namespace Lemonade_Stand
         //constructor (Spawner)
         public SugarCube()
         {
-            sugarCubePrice = 0.40;
+            //sugarCubePrice = 0.40;
         }
 
         //member methods (Can Do)

@@ -13,10 +13,6 @@ namespace Lemonade_Stand
         private double pricePerSugarCube;
         private double pricePerIceCube;
         private double pricePerCup;
-        //public int lemonInventory;
-        //public int sugarInventory;
-        //public int iceInventory;
-        //public int cupInventory;
 
         //constructor (Spawner)
         public Store()

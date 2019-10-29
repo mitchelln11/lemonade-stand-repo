@@ -13,7 +13,6 @@ namespace Lemonade_Stand
         public List<SugarCube> sugarCubes;
         public List<IceCube> iceCubes;
         public List<Cup> cups;
-        public int lemonInventory;
 
 
         //constructor (Spawner)

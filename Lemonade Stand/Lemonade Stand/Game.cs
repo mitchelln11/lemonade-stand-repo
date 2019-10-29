@@ -36,6 +36,9 @@ namespace Lemonade_Stand
             Inventory inventory = new Inventory();
             inventory.CreateInventory();
 
+            Recipe recipe = new Recipe();
+            recipe.CreateRecipe();
+
             Console.ReadLine();
 
             
