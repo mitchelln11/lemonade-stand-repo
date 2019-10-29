@@ -9,13 +9,13 @@ namespace Lemonade_Stand
     class Wallet
     {
         //member variables (Has A)
-        private double money;
+        public double walletTotal;
         public double Money;
 
         //constructor (Spawner)
         public Wallet()
         {
-            Money = 20.00;
+            walletTotal = 20.00;
         }
 
 

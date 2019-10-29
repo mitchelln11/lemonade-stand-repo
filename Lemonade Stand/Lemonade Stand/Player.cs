@@ -17,6 +17,11 @@ namespace Lemonade_Stand
 
 
         //constructor (Spawner)
+        public Player()
+        {
+            wallet = new Wallet();//Player owns wallet
+            inventory = new Inventory();
+        }
 
         //member methods (Can Do)
         public void askName()

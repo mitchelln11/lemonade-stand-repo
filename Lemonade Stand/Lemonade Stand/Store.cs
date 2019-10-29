@@ -10,23 +10,9 @@ namespace Lemonade_Stand
     {
         //member variables(Has A)
         private double pricePerLemon;
-        private int lemonAmountPrompt;
-        public double lemonTotal;
-
         private double pricePerSugarCube;
-        private int sugarCubeAmountPrompt;
-        public double sugarCubeTotal;
-
         private double pricePerIceCube;
-        private int iceCubeAmountPrompt;
-        public double iceCubeTotal;
-
         private double pricePerCup;
-        private int cupAmountPrompt;
-        public double cupTotal;
-
-        Player player = new Player();
-        
 
         //constructor (Spawner)
         public Store()
@@ -35,69 +21,85 @@ namespace Lemonade_Stand
             pricePerSugarCube = 0.10;
             pricePerIceCube = 0.02;
             pricePerCup = 0.05;
-            player.askName();
         }
 
         //member methods (Can Do)
         // --------------------------------Lemon Section------------------------------------------------
-        public void AmountOfLemons()
+        public void AmountOfLemons(Player player)
         {
+            int lemonAmountPrompt;
+            double lemonTotal;
+
             Console.WriteLine("How many lemons do you want to buy " + player.name + "? They are " + pricePerLemon + " each.");
             lemonAmountPrompt = Convert.ToInt32(Console.ReadLine());
-            LemonMath();
-            Console.WriteLine(player.name + ", you purchased " + lemonAmountPrompt + " lemons for " + lemonTotal);
+            lemonTotal = LemonMath(lemonAmountPrompt);
+            Console.WriteLine(player.name + ", you purchased " + lemonAmountPrompt + " lemons for " + lemonTotal + " dollars");
+            player.wallet.walletTotal = player.wallet.walletTotal - lemonTotal;
+            // update player's inventory
         }
 
-        public void LemonMath()
+        public double LemonMath(int lemonAmount)
         {
-            lemonTotal = lemonAmountPrompt * pricePerLemon;
+            double lemonTotal = lemonAmount * pricePerLemon;
             Console.WriteLine(lemonTotal);
-            
+            return lemonTotal;   
         }
 
         // --------------------------------Sugar Cubes Section------------------------------------------------
-        public void AmountOfSugarCubes()
+        public void AmountOfSugarCubes(Player player)
         {
+            int sugarCubeAmountPrompt;
+            double sugarCubeTotal;
+
             Console.WriteLine("How many sugar cubes do you want to buy " + player.name + "? They are " + pricePerSugarCube + " each.");
             sugarCubeAmountPrompt = Convert.ToInt32(Console.ReadLine());
-            SugarCubeMath();
-            Console.WriteLine(player.name + ", you purchased " + sugarCubeAmountPrompt + " sugar cubes for " + sugarCubeTotal);
+            sugarCubeTotal = SugarCubeMath(sugarCubeAmountPrompt);
+            Console.WriteLine(player.name + ", you purchased " + sugarCubeAmountPrompt + " sugar cubes for " + sugarCubeTotal + " dollars");
+            
         }
 
-        public void SugarCubeMath()
+        public double SugarCubeMath(int sugarCubeAmount)
         {
-            sugarCubeTotal = sugarCubeAmountPrompt * pricePerSugarCube;
+            double sugarCubeTotal = sugarCubeAmount * pricePerSugarCube;
             Console.WriteLine(sugarCubeTotal);
+            return sugarCubeTotal;
         }
 
         // --------------------------------Ice Cubes Section------------------------------------------------
-        public void AmountOfIceCubes()
+        public void AmountOfIceCubes(Player player)
         {
+            int iceCubeAmountPrompt;
+            double iceCubeTotal;
+
             Console.WriteLine("How many ice cubes do you want to buy " + player.name + "? They are " + pricePerIceCube + " each.");
             iceCubeAmountPrompt = Convert.ToInt32(Console.ReadLine());
-            IceCubeMath();
-            Console.WriteLine(player.name + ", you purchased " + iceCubeAmountPrompt + " ice cubes for " + iceCubeTotal);
+            iceCubeTotal = IceCubeMath(iceCubeAmountPrompt);
+            Console.WriteLine(player.name + ", you purchased " + iceCubeAmountPrompt + " ice cubes for " + iceCubeTotal + " dollars");
         }
 
-        public void IceCubeMath()
+        public double IceCubeMath(int iceCubeAmount)
         {
-            iceCubeTotal = iceCubeAmountPrompt * pricePerIceCube;
+            double iceCubeTotal = iceCubeAmount * pricePerIceCube;
             Console.WriteLine(iceCubeTotal);
+            return iceCubeTotal;
         }
 
         // --------------------------------Cups Section------------------------------------------------
-        public void AmountOfCups()
+        public void AmountOfCups(Player player)
         {
+            int cupAmountPrompt;
+            double cupTotal;
+
             Console.WriteLine("How many cups do you want to buy " + player.name + "? They are " + pricePerCup + " each.");
             cupAmountPrompt = Convert.ToInt32(Console.ReadLine());
-            CupMath();
-            Console.WriteLine(player.name + ", you purchased " + cupAmountPrompt + " cups for " + cupTotal);
+            cupTotal = CupMath(cupAmountPrompt);
+            Console.WriteLine(player.name + ", you purchased " + cupAmountPrompt + " cups for " + cupTotal + " dollars");
         }
 
-        public void CupMath()
+        public double CupMath(int cupAmount)
         {
-            cupTotal = cupAmountPrompt * pricePerCup;
-            Console.WriteLine(cupTotal);
+            double cupTotal = cupAmount * pricePerCup;
+            return cupTotal;
         }
     }
 }

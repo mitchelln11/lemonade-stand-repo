@@ -9,7 +9,7 @@ namespace Lemonade_Stand
     class Game
     {
         //member variables (Has A)
-        Player player;
+        public Player player;
         private List<Day> days;
         public int currentDay;
 
@@ -20,17 +20,18 @@ namespace Lemonade_Stand
         public void runGame()
         {
             player = new Player();
+            player.askName();
 
             Store store = new Store();
-            store.AmountOfLemons();
-            store.AmountOfSugarCubes();
-            store.AmountOfIceCubes();
-            store.AmountOfCups();
+            store.AmountOfLemons(player);
+            store.AmountOfSugarCubes(player);
+            store.AmountOfIceCubes(player);
+            store.AmountOfCups(player);
             Console.ReadLine();
 
-            days = new List<Day>();
-            Day day = new Day("Monday");
-            days.Add(day);
+            //days = new List<Day>();
+            //Day day = new Day("Monday");
+            //days.Add(day);
             //Weather weather = new Weather();
             //weather.temperature();
         }
