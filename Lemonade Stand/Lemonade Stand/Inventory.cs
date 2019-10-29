@@ -13,18 +13,40 @@ namespace Lemonade_Stand
         public List<SugarCube> sugarCubes;
         public List<IceCube> iceCubes;
         public List<Cup> cups;
-        
+        public int lemonInventory;
+
 
         //constructor (Spawner)
         public Inventory()
         {
-            lemons = new List<Lemon>(){};
-            sugarCubes = new List<SugarCube>() { };
-            iceCubes = new List<IceCube>(){};
-            cups = new List<Cup>(){};
+            lemons = new List<Lemon>();
+            sugarCubes = new List<SugarCube>();
+            iceCubes = new List<IceCube>();
+            cups = new List<Cup>();
+        }
+
+
+        //member methods (Can Do)
+        public void CreateInventory()
+        {
+            if (lemons.Count != 0)
+            {
+                Console.WriteLine("Lemons: " + lemons.Count);
+            }
+            if (sugarCubes.Count != 0)
+            {
+                Console.WriteLine("Sugar Cubes: " + sugarCubes.Count);
+            }
+            if (iceCubes.Count != 0)
+            {
+                Console.WriteLine("Ice Cubes: " + iceCubes.Count);
+            }
+            if (cups.Count != 0)
+            {
+                Console.WriteLine("Cups: " + cups.Count);
+            }
         }
         
 
-        //member methods (Can Do)
     }
 }

@@ -17,7 +17,7 @@ namespace Lemonade_Stand
         //constructor (Spawner)
         public Recipe()
         {
-            //repice = 20.00;
+            //recipe = 20.00;
         }
 
         //member methods (Can Do)
