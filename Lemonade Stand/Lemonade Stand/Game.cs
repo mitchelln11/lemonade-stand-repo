@@ -33,11 +33,8 @@ namespace Lemonade_Stand
             store.AmountOfIceCubes(player);
             store.AmountOfCups(player);
 
-            Inventory inventory = new Inventory();
-            inventory.CreateInventory();
-
-            Recipe recipe = new Recipe();
-            recipe.CreateRecipe();
+            player.inventory.CreateInventory();
+            player.recipe.CreateRecipe(player.inventory);
 
             Console.ReadLine();
 

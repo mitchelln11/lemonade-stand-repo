@@ -45,7 +45,6 @@ namespace Lemonade_Stand
                 Console.WriteLine("Cups: " + cups.Count);
             }
         }
-        
 
     }
 }

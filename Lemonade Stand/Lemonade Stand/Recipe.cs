@@ -9,11 +9,15 @@ namespace Lemonade_Stand
     class Recipe
     {
         //member variables(Has A)
-        Player player;
         public int amountOfLemons;
         public int amountOfSugarCubes;
         public int amountOfIceCubes;
         public double pricePerCup;
+
+        public int invLemons;
+        public int invSugar;
+        public int invIce;
+        public int invCups;
 
         //constructor (Spawner)
         public Recipe()
@@ -22,11 +26,12 @@ namespace Lemonade_Stand
         }
 
         //member methods (Can Do)
-        public void CreateRecipe()
+        public void CreateRecipe(Inventory inventory)
         {
-            //Find out how to access user input from Store to store here for further use
-            recipe = player.inventory.lemons.Count;
-            Console.WriteLine("Lemons: " + recipe);
+            Console.WriteLine("Lemons: " + inventory.lemons.Count);
+            Console.WriteLine("Sugar Cubes: " + inventory.sugarCubes.Count);
+            Console.WriteLine("Ice Cubes: " + inventory.iceCubes.Count);
+            Console.WriteLine("Cups: " + inventory.cups.Count);
         }
     }
 }
