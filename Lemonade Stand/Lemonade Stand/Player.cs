@@ -15,6 +15,8 @@ namespace Lemonade_Stand
         public Recipe recipe;
         public Pitcher pitcher;
 
+        public int updatedLemonTotal;
+
 
         //constructor (Spawner)
         public Player()
@@ -29,6 +31,14 @@ namespace Lemonade_Stand
         {
             Console.WriteLine("What is your name?");
             name = Console.ReadLine().Replace(" ", "").Trim();
+        }
+
+        public void UpdateInventory()
+        {
+            
+            updatedLemonTotal = inventory.lemons.Count - recipe.amountOfLemons;
+            Console.WriteLine(updatedLemonTotal + " lemons remaining");
+            
         }
     }
 }
