@@ -21,7 +21,7 @@ namespace Lemonade_Stand
         public Day()
         {
             //dayOfWeek = dayName;
-            //weather = new Weather();
+
             days = new List<Day>();
             dayMinimum = 7;
         }
@@ -34,7 +34,7 @@ namespace Lemonade_Stand
 
             if (totalDays >= dayMinimum)
             {
-                for (int i = 0; i < totalDays; i++)
+                for (int currentDay = 0; currentDay < totalDays; currentDay++)
                 {
                     Day day = new Day();
                     days.Add(day);
@@ -43,7 +43,6 @@ namespace Lemonade_Stand
                     // Update inventory
                     // Create recipe
                     // Run a day
-
                 }
             }
             else
@@ -51,7 +50,10 @@ namespace Lemonade_Stand
                 Console.WriteLine("Sorry, you must play at least 7 days.");
                 DaySet();
             }
-            
+        }
+
+        public void SelectWeather()
+        {
 
         }
     }

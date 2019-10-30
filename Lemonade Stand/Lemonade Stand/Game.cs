@@ -32,6 +32,9 @@ namespace Lemonade_Stand
             Day day = new Day();
             day.DaySet();
 
+            Weather weather = new Weather();
+            weather.SelectWeather();
+
             Store store = new Store();
             store.AmountOfLemons(player);
             store.AmountOfSugarCubes(player);
