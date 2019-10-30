@@ -28,13 +28,6 @@ namespace Lemonade_Stand
 
 
         //member methods (Can Do)
-        public void CreateInventory()
-        {
-            //recipe.CreateRecipe();
-            //lemons = player.recipe.remainingLemons;
-
-            //remainingLemons = lemons.Count - player.recipe.amountOfLemons;
-        }
 
     }
 }

@@ -32,9 +32,7 @@ namespace Lemonade_Stand
             amountOfLemons = Convert.ToInt32(Console.ReadLine());
             if (inventory.lemons.Count >= amountOfLemons );
             {
-                //remainingLemons = inventory.lemons.Count - amountOfLemons;
                 Console.WriteLine(amountOfLemons + " lemons added to each pitcher \n");
-                Console.WriteLine(remainingLemons);
             }
             
 
@@ -42,7 +40,6 @@ namespace Lemonade_Stand
             amountOfSugarCubes = Convert.ToInt32(Console.ReadLine());
             if (inventory.sugarCubes.Count >= amountOfSugarCubes);
             {
-                remainingSugarCubes = inventory.sugarCubes.Count - amountOfSugarCubes;
                 Console.WriteLine(amountOfSugarCubes + " sugar cubes in each pitcher \n");
             }
 
@@ -50,7 +47,6 @@ namespace Lemonade_Stand
             amountOfIceCubes = Convert.ToInt32(Console.ReadLine());
             if (inventory.iceCubes.Count >= amountOfIceCubes) ;
             {
-                remainingIceCubes = inventory.iceCubes.Count - amountOfIceCubes;
                 Console.WriteLine(amountOfIceCubes + " ice cubes in each pitcher \n");
             }
 
