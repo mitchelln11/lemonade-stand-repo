@@ -10,11 +10,13 @@ namespace Lemonade_Stand
     {
         //member variables (Has A)
         public Player player;
-        private List<Day> days;
         public int currentDay;
 
         //constructor (Spawner)
-        
+        public Game()
+        {
+
+        }
 
         //member methods (Can Do)
         public void runGame()
@@ -27,6 +29,9 @@ namespace Lemonade_Stand
             player = new Player();
             player.askName();
 
+            Day day = new Day();
+            day.DaySet();
+
             Store store = new Store();
             store.AmountOfLemons(player);
             store.AmountOfSugarCubes(player);
@@ -34,14 +39,13 @@ namespace Lemonade_Stand
             store.AmountOfCups(player);
 
             player.recipe.CreateRecipe(player.inventory);
-
             player.UpdateInventory(); // On here instead of inventory because player is a shared parent.
+            player.FillPitcher();
 
 
             Console.ReadLine();
 
-            
-            //Day day = new Day("Monday");
+            //Day day = new Day("Tuesday");
             //days.Add(day);
             //Weather weather = new Weather();
             //weather.temperature();

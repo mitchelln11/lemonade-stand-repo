@@ -18,6 +18,7 @@ namespace Lemonade_Stand
         public int updatedLemonTotal;
         public int updatedSugarTotal;
         public int updatedIceTotal;
+        public int pitcherAmount;
 
 
         //constructor (Spawner)
@@ -26,6 +27,7 @@ namespace Lemonade_Stand
             wallet = new Wallet();//Player owns wallet
             inventory = new Inventory();
             recipe = new Recipe();
+            pitcher = new Pitcher();
         }
 
         //member methods (Can Do)
@@ -43,6 +45,15 @@ namespace Lemonade_Stand
             Console.WriteLine(updatedLemonTotal + " lemons remaining");
             Console.WriteLine(updatedSugarTotal + " Sugar Cubes remaining");
             Console.WriteLine(updatedIceTotal + " Ice Cubes remaining");
+        }
+
+        public void FillPitcher()
+        {
+            if (pitcher.cupsLeftInPitcher <= pitcher.cupsPerPitcher)
+            {
+                pitcherAmount = pitcher.cupsPerPitcher - pitcher.cupsLeftInPitcher;
+                Console.WriteLine(pitcherAmount);
+            }
         }
     }
 }

@@ -54,7 +54,6 @@ namespace Lemonade_Stand
                 Lemon lemon = new Lemon();
                 player.inventory.lemons.Add(lemon);
             }
-            player.inventory.CreateInventory();
 
         }
 
@@ -86,7 +85,6 @@ namespace Lemonade_Stand
                 SugarCube sugarCube = new SugarCube();
                 player.inventory.sugarCubes.Add(sugarCube);
             }
-            player.inventory.CreateInventory();
         }
 
         // --------------------------------Ice Cubes Section------------------------------------------------
@@ -117,7 +115,6 @@ namespace Lemonade_Stand
                 IceCube iceCube = new IceCube();
                 player.inventory.iceCubes.Add(iceCube);
             }
-            player.inventory.CreateInventory();
         }
 
         // --------------------------------Cups Section------------------------------------------------
@@ -148,7 +145,6 @@ namespace Lemonade_Stand
                 Cup cups = new Cup();
                 player.inventory.cups.Add(cups);
             }
-            player.inventory.CreateInventory();
         }
     }
 }
