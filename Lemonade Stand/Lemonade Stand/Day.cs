@@ -51,10 +51,5 @@ namespace Lemonade_Stand
                 DaySet();
             }
         }
-
-        public void SelectWeather()
-        {
-
-        }
     }
 }

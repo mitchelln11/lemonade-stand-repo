@@ -34,6 +34,7 @@ namespace Lemonade_Stand
 
             Weather weather = new Weather();
             weather.SelectWeather();
+            weather.SelectTemperature();
 
             Store store = new Store();
             store.AmountOfLemons(player);
