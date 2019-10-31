@@ -44,7 +44,7 @@ namespace Lemonade_Stand
             Console.WriteLine(player.name + ", you purchased " + lemonAmountPrompt + " lemons for " + lemonTotal + " dollars");
             player.wallet.WalletTotal = player.wallet.WalletTotal - lemonTotal;
             Console.WriteLine(player.wallet.WalletTotal + " dollars remaining \n");
-            AddLemonsInv(player, lemonAmountPrompt, lemonTotal);
+            AddLemonsInv(player, lemonAmountPrompt);
             // update player's inventory
 
         }
@@ -55,7 +55,7 @@ namespace Lemonade_Stand
             return lemonTotal;
         }
 
-        public void AddLemonsInv(Player player, double lemonAmountPrompt, double lemonTotal)
+        public void AddLemonsInv(Player player, double lemonAmountPrompt)
         {
             for (int i = 0; i < lemonAmountPrompt; i++)
             {
@@ -77,7 +77,7 @@ namespace Lemonade_Stand
             Console.WriteLine(player.name + ", you purchased " + sugarCubeAmountPrompt + " sugar cubes for " + sugarCubeTotal + " dollars");
             player.wallet.WalletTotal = player.wallet.WalletTotal - sugarCubeTotal;
             Console.WriteLine(player.wallet.WalletTotal + " dollars remaining \n");
-            AddSugarCubeInv(player, sugarCubeAmountPrompt, sugarCubeTotal);
+            AddSugarCubeInv(player, sugarCubeAmountPrompt);
         }
 
         public double SugarCubeMath(int sugarCubeAmount)
@@ -86,7 +86,7 @@ namespace Lemonade_Stand
             return sugarCubeTotal;
         }
 
-        public void AddSugarCubeInv(Player player, double sugarCubeAmountPrompt, double sugarCubeTotal)
+        public void AddSugarCubeInv(Player player, double sugarCubeAmountPrompt)
         {
             for (int i = 0; i < sugarCubeAmountPrompt; i++)
             {
@@ -107,7 +107,7 @@ namespace Lemonade_Stand
             Console.WriteLine(player.name + ", you purchased " + iceCubeAmountPrompt + " ice cubes for " + iceCubeTotal + " dollars");
             player.wallet.WalletTotal = player.wallet.WalletTotal - iceCubeTotal;
             Console.WriteLine(player.wallet.WalletTotal + " dollars remaining \n");
-            AddIceCubeInv(player, iceCubeAmountPrompt, iceCubeTotal);
+            AddIceCubeInv(player, iceCubeAmountPrompt);
         }
 
         public double IceCubeMath(int iceCubeAmount)
@@ -116,7 +116,7 @@ namespace Lemonade_Stand
             return iceCubeTotal;
         }
 
-        public void AddIceCubeInv(Player player, double iceCubeAmountPrompt, double iceCubeTotal)
+        public void AddIceCubeInv(Player player, double iceCubeAmountPrompt)
         {
             for (int i = 0; i < iceCubeAmountPrompt; i++)
             {
@@ -137,7 +137,7 @@ namespace Lemonade_Stand
             Console.WriteLine(player.name + ", you purchased " + cupAmountPrompt + " cups for " + cupTotal + " dollars");
             player.wallet.WalletTotal = player.wallet.WalletTotal - cupTotal;
             Console.WriteLine(player.wallet.WalletTotal + " dollars remaining \n");
-            AddCupInv(player, cupAmountPrompt, cupTotal);
+            AddCupInv(player, cupAmountPrompt);
         }
 
         public double CupMath(int cupAmount)
@@ -146,7 +146,7 @@ namespace Lemonade_Stand
             return cupTotal;
         }
 
-        public void AddCupInv(Player player, double cupAmountPrompt, double cupTotal)
+        public void AddCupInv(Player player, double cupAmountPrompt)
         {
             for (int i = 0; i < cupAmountPrompt; i++)
             {

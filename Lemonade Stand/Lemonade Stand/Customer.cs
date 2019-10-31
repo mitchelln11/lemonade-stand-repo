@@ -26,22 +26,22 @@ namespace Lemonade_Stand
         private double CentMatch()
         {
             centCap = rand.Next(25, 99);
-            Console.WriteLine(centCap);//Finds string version of index number
             return centCap;
+            //CURRENTLY RUNNING BECAUSE I AM ADDING 3 CUSTOMERS ON THE DAY CLASS, LINE 65
         }
 
         public void PriceFactor(Recipe localRecipe) 
         {
             CentMatch();
-            if (localRecipe.pricePerCup > centCap) //Need random cent amount to match against
+            if (localRecipe.pricePerCup < centCap)
             {
-                Console.WriteLine(localRecipe.pricePerCup + " Ja");
-                //return true;
+                Console.WriteLine(centCap + " Ja");
+                //return true;  ? Why can't I return? Even when it's not void
             }
             else
             {
                 Console.WriteLine(centCap + " Nein");
-                //return false;
+                //return false; ? Why can't I return? Even when it's not void
             }
         }
     }

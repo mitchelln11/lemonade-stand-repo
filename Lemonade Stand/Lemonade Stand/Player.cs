@@ -41,7 +41,7 @@ namespace Lemonade_Stand
         {
             updatedLemonTotal = inventory.lemons.Count - recipe.amountOfLemons;
             updatedSugarTotal = inventory.sugarCubes.Count - recipe.amountOfSugarCubes;
-            updatedIceTotal = inventory.iceCubes.Count - recipe.amountOfIceCubes;
+            updatedIceTotal = inventory.iceCubes.Count - inventory.iceCubes.Count;
             Console.WriteLine(updatedLemonTotal + " lemons remaining");
             Console.WriteLine(updatedSugarTotal + " Sugar Cubes remaining");
             Console.WriteLine(updatedIceTotal + " Ice Cubes remaining");

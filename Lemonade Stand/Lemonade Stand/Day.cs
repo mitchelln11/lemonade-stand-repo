@@ -59,6 +59,7 @@ namespace Lemonade_Stand
         {
             Console.WriteLine(weather.tempCondition);
 
+            //Try foreach loop up to 150 people
             if (weather.tempCondition < 95)
             {
                 Customer newCustomer = new Customer();
