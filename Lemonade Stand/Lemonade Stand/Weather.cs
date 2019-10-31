@@ -9,10 +9,9 @@ namespace Lemonade_Stand
     class Weather
     {
         //member variables (Has A)
-        private Random rand;
+        public Random rand;
         public List<string> weatherConditions;
         public int weatherCondition;
-        public List<int> tempReading;
         public int tempCondition;
 
         //constructor
@@ -20,20 +19,21 @@ namespace Lemonade_Stand
         {
             rand = new Random();
             weatherConditions = new List<string>() { "Sunny", "Overcast", "Rain", "Snow", "Sleet", "Humid"};
-            tempReading = new List<int>() {65,80,75,90,103,72,86,95,50};
         }
         
         //member methods (Can Do)
-        public void SelectWeather()
+        public string SelectWeather()
         {
             weatherCondition = rand.Next(weatherConditions.Count);
             Console.WriteLine("Weather Condition: " + weatherConditions[weatherCondition]);//Finds string version of index number
+            return weatherConditions[weatherCondition];
         }
 
-        public void SelectTemperature()
+        public int SelectTemperature()
         {
-            tempCondition = rand.Next(tempReading.Count);
-            Console.WriteLine("Temperature: " + tempReading[tempCondition]);//Finds string version of index number
+            tempCondition = rand.Next(56, 103);
+            Console.WriteLine("Weather Temperature: " + tempCondition);//Finds string version of index number
+            return tempCondition;
         }
     }
 }

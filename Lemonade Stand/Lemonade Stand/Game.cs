@@ -31,10 +31,11 @@ namespace Lemonade_Stand
 
             Day day = new Day();
             day.DaySet();
+            day.weather.SelectWeather();
+            day.weather.SelectTemperature();
 
-            Weather weather = new Weather();
-            weather.SelectWeather();
-            weather.SelectTemperature();
+            day.CustomerDecisions(); // Just going here early for testing purposes
+            Console.ReadLine();
 
             Store store = new Store();
             store.AmountOfLemons(player);

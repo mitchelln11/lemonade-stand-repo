@@ -9,10 +9,13 @@ namespace Lemonade_Stand
     class Day
     {
         //member variables(Has A)
+        public List<string> weatherConditions;
         public Weather weather;
         public int totalDays;
+        //public List<Customer> customers;
         public List<Day> days;
         private int dayMinimum;
+        public List<string> names;
 
         //public List<Customer> customers;
         public string dayOfWeek;
@@ -21,9 +24,11 @@ namespace Lemonade_Stand
         public Day()
         {
             //dayOfWeek = dayName;
-
             days = new List<Day>();
             dayMinimum = 7;
+            weatherConditions = new List<string>();
+            weather = new Weather();
+            names = new List<string>() { "Ralph", "Mike", "Thomas", "Rachel", "Eric", "Michelle", "Nicole", "Maggie", "Katie", "Paige", "Bailey", "Jesus", "Sven" };
         }
 
         //member methods (Can Do)
@@ -40,8 +45,6 @@ namespace Lemonade_Stand
                     days.Add(day);
                     // Add weather
                     // Shop at store
-                    // Update inventory
-                    // Create recipe
                     // Run a day
                 }
             }
@@ -51,5 +54,20 @@ namespace Lemonade_Stand
                 DaySet();
             }
         }
-    }
+
+        public void CustomerDecisions()
+        {
+            Console.WriteLine(weather.tempCondition);
+
+            if (weather.tempCondition < 95)
+            {
+                Console.WriteLine("Test");
+            }
+            else
+            {
+                Console.WriteLine("below the test");
+            }
+        }
+        
+}
 }

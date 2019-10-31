@@ -8,7 +8,14 @@ namespace Lemonade_Stand
 {
     class Customer
     {
-        private List<string> names;
+        //member variables(Has A)
         public string name;
+
+        //constructor (Spawner)
+        public Customer()
+        {
+            
+        }
+        //member methods (Can Do)
     }
 }
