@@ -12,21 +12,18 @@ namespace Lemonade_Stand
         public List<string> weatherConditions;
         public Weather weather;
         public int totalDays;
-        //public List<Customer> customers;
         public List<Day> days;
         private int dayMinimum;
         public List<string> names;
-
-        //public List<Customer> customers;
-        public string dayOfWeek;
+        public List<Customer> customers;
 
         //constructor (Spawner)
         public Day()
         {
             //dayOfWeek = dayName;
             days = new List<Day>();
+            customers = new List<Customer>();
             dayMinimum = 7;
-            weatherConditions = new List<string>();
             weather = new Weather();
             names = new List<string>() { "Ralph", "Mike", "Thomas", "Rachel", "Eric", "Michelle", "Nicole", "Maggie", "Katie", "Paige", "Bailey", "Jesus", "Sven" };
         }
@@ -61,13 +58,30 @@ namespace Lemonade_Stand
 
             if (weather.tempCondition < 95)
             {
-                Console.WriteLine("Test");
+                Customer newCustomer = new Customer();
+                customers.Add(newCustomer);
+                customers.Add(newCustomer);
+                customers.Add(newCustomer);
             }
             else
             {
                 Console.WriteLine("below the test");
             }
         }
-        
-}
+
+        public void PriceFactor(Recipe localRecipe)
+        {
+            if (localRecipe.pricePerCup > 5)
+            {
+                Console.WriteLine("Ja");
+                //return true;
+            }
+            else
+            {
+                Console.WriteLine("Nein");
+                //return false;
+            }
+        }
+
+    }
 }

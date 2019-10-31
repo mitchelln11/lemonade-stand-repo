@@ -31,7 +31,7 @@ namespace Lemonade_Stand
         }
 
         //member methods (Can Do)
-        public void askName()
+        public void AskName()
         {
             Console.WriteLine("What is your name?");
             name = Console.ReadLine().Replace(" ", "").Trim();

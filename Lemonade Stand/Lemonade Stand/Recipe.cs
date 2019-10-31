@@ -26,7 +26,6 @@ namespace Lemonade_Stand
 
         //member methods (Can Do)
         public void CreateRecipe(Inventory inventory)
-            
         {
             Console.WriteLine("How many lemons per pitcher?");
             amountOfLemons = Convert.ToInt32(Console.ReadLine());
@@ -49,12 +48,12 @@ namespace Lemonade_Stand
             {
                 Console.WriteLine(amountOfIceCubes + " ice cubes in each pitcher \n");
             }
+        }
 
-
-            //Console.WriteLine("Lemons: " + inventory.lemons.Count);
-            //Console.WriteLine("Sugar Cubes: " + inventory.sugarCubes.Count);
-            //Console.WriteLine("Ice Cubes: " + inventory.iceCubes.Count);
-            //Console.WriteLine("Cups: " + inventory.cups.Count);
+        public void PricePerCup()
+        {
+            Console.WriteLine("What would you like the price to be per cup? (In cents - Ex: 16 = 0.16)");
+            pricePerCup = Convert.ToInt32(Console.ReadLine());
         }
     }
 }

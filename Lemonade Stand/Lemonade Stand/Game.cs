@@ -10,16 +10,32 @@ namespace Lemonade_Stand
     {
         //member variables (Has A)
         public Player player;
+        public Day day;
+        public Recipe localRecipe;
         public int currentDay;
+        public double lemonadePrice;
 
         //constructor (Spawner)
         public Game()
         {
-
         }
 
+        //public void PriceFactor()
+        //{
+        //    if (pricePerCup > 5)
+        //    {
+        //        Console.WriteLine("vjkdvkjvjdvndvdnvdnvio");
+        //        //return true;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Nein");
+        //        //return false;
+        //    }
+        // }
+
         //member methods (Can Do)
-        public void runGame()
+        public void RunGame()
         {
             Console.WriteLine("You are tasked to purchase ingredients for a lemonade stand. \n" +
                 "Apply your purchased ingredients to create the right recipe for success. \n" +
@@ -27,15 +43,14 @@ namespace Lemonade_Stand
                 "You have 7 days to turn a profit. \n");
 
             player = new Player();
-            player.askName();
+            player.AskName();
 
-            Day day = new Day();
+            day = new Day();
             day.DaySet();
             day.weather.SelectWeather();
             day.weather.SelectTemperature();
 
             day.CustomerDecisions(); // Just going here early for testing purposes
-            Console.ReadLine();
 
             Store store = new Store();
             store.AmountOfLemons(player);
@@ -44,16 +59,17 @@ namespace Lemonade_Stand
             store.AmountOfCups(player);
 
             player.recipe.CreateRecipe(player.inventory);
+            
+            player.recipe.PricePerCup();
+            //day.customers.PriceFactor(player.recipe);
+
+
+
             player.UpdateInventory(); // On here instead of inventory because player is a shared parent.
             player.FillPitcher();
 
 
             Console.ReadLine();
-
-            //Day day = new Day("Tuesday");
-            //days.Add(day);
-            //Weather weather = new Weather();
-            //weather.temperature();
         }
     }
 }

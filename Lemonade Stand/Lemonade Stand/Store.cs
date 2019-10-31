@@ -23,6 +23,14 @@ namespace Lemonade_Stand
             pricePerCup = 0.05;
         }
 
+
+
+
+        // DON'T FORGET TO ADD CONDITIONAL IF THERE ISN'T ENOUGH MONEY IN THE WALLET
+
+
+
+
         //member methods (Can Do)
         // --------------------------------Lemon Section------------------------------------------------
         public void AmountOfLemons(Player player)

@@ -18,7 +18,7 @@ namespace Lemonade_Stand
         public Weather()
         {
             rand = new Random();
-            weatherConditions = new List<string>() { "Sunny", "Overcast", "Rain", "Snow", "Sleet", "Humid"};
+            weatherConditions = new List<string>() { "Sunny", "Overcast", "Rain", "Partly Cloudy", "Dry", "Humid"};
         }
         
         //member methods (Can Do)
