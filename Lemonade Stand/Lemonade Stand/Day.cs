@@ -59,18 +59,22 @@ namespace Lemonade_Stand
         {
             Console.WriteLine(weather.tempCondition);
 
-            //Try foreach loop up to 150 people
-            if (weather.tempCondition < 95)
-            {
-                Customer newCustomer = new Customer();
-                customers.Add(newCustomer);
-                customers.Add(newCustomer);
-                customers.Add(newCustomer);
-            }
-            else
-            {
-                Console.WriteLine("below the test");
-            }
+            //Try for loop up to 100 people i loop to try exactly 100
+            //foreach (Customer newCustomer in customers)
+            //{
+                if (weather.tempCondition < 95)
+                {
+                    Customer newCustomer = new Customer();
+                    customers.Add(newCustomer);
+                    customers.Add(newCustomer);
+                    customers.Add(newCustomer);
+                }
+                else
+                {
+                    Console.WriteLine("below the test");
+                }
+                //}
+           
         }
 
     }
