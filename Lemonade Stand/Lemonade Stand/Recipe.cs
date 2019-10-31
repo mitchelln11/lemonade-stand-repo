@@ -44,7 +44,7 @@ namespace Lemonade_Stand
 
             Console.WriteLine("How many ice cubes per pitcher?");
             amountOfIceCubes = Convert.ToInt32(Console.ReadLine());
-            if (inventory.iceCubes.Count >= amountOfIceCubes) ;
+            if (inventory.iceCubes.Count >= amountOfIceCubes)
             {
                 Console.WriteLine(amountOfIceCubes + " ice cubes in each pitcher \n");
             }

@@ -59,15 +59,16 @@ namespace Lemonade_Stand
             store.AmountOfCups(player);
 
             player.recipe.CreateRecipe(player.inventory);
-            
             player.recipe.PricePerCup();
-            //day.customers.PriceFactor(player.recipe);
 
-
+            // Run through each customer in customers list and run the method on the customer class
+            foreach(Customer gameCustomer in day.customers)
+            {
+                gameCustomer.PriceFactor(player.recipe);
+            }
 
             player.UpdateInventory(); // On here instead of inventory because player is a shared parent.
             player.FillPitcher();
-
 
             Console.ReadLine();
         }

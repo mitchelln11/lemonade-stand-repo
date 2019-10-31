@@ -16,6 +16,8 @@ namespace Lemonade_Stand
         private int dayMinimum;
         public List<string> names;
         public List<Customer> customers;
+        public double custRandomCap;
+        public Random rand;
 
         //constructor (Spawner)
         public Day()
@@ -25,6 +27,7 @@ namespace Lemonade_Stand
             customers = new List<Customer>();
             dayMinimum = 7;
             weather = new Weather();
+            rand = new Random();
             names = new List<string>() { "Ralph", "Mike", "Thomas", "Rachel", "Eric", "Michelle", "Nicole", "Maggie", "Katie", "Paige", "Bailey", "Jesus", "Sven" };
         }
 
@@ -66,20 +69,6 @@ namespace Lemonade_Stand
             else
             {
                 Console.WriteLine("below the test");
-            }
-        }
-
-        public void PriceFactor(Recipe localRecipe)
-        {
-            if (localRecipe.pricePerCup > 5)
-            {
-                Console.WriteLine("Ja");
-                //return true;
-            }
-            else
-            {
-                Console.WriteLine("Nein");
-                //return false;
             }
         }
 
