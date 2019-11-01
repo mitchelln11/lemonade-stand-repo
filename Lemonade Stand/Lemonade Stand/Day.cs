@@ -11,8 +11,6 @@ namespace Lemonade_Stand
         //member variables(Has A)
         public List<string> weatherConditions;
         public Weather weather;
-        //public List<Day> days;
-        //private int dayMinimum;
         public List<string> names;
         public List<Customer> customers;
         public int dailyCust;
@@ -34,11 +32,10 @@ namespace Lemonade_Stand
             return centCap;
         }
 
-
-        public void CustomerDecisions()
+        public void AddCustomers()
         {
-            //Instead of creating a method to generate a random number, just generate inside the spot where it's needed
-            for (int i = 0; i< rand.Next(50, 150); i++)
+            dailyCust = rand.Next(8, 10);// Must run a random number before the loop
+            for (int i = 0; i<dailyCust; i++)
             {
                 Customer newCustomer = new Customer();
                 customers.Add(newCustomer);

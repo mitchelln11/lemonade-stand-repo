@@ -36,12 +36,6 @@ namespace Lemonade_Stand
             if (potentialdays >= dayMinimum)
             {
                 totalDays = potentialdays;
-                //for (int currentDay = 0; currentDay < totalDays; currentDay++)
-                //{
-                //    Day day = new Day();
-                //    days.Add(day);
-                //    Console.WriteLine(day);
-                //}
             }
             else
             {
@@ -52,7 +46,7 @@ namespace Lemonade_Stand
 
         public void IncrementDay()
         {
-            for (int currentDay = 0; currentDay < totalDays; currentDay++)
+            for (currentDay = 1; currentDay < totalDays; currentDay++)
             {
                 Day day = new Day();
                 days.Add(day);
@@ -74,10 +68,11 @@ namespace Lemonade_Stand
         {
             day = new Day();
             DaySet();
+            Console.WriteLine("Current Day: " + currentDay);
             day.weather.SelectWeather();
             day.weather.SelectTemperature();
 
-            day.CustomerDecisions(); // Just going here early for testing purposes
+            //day.CustomerDecisions(); // Just going here early for testing purposes
 
             Store store = new Store();
             store.AmountOfLemons(player);
@@ -89,7 +84,7 @@ namespace Lemonade_Stand
             player.recipe.PricePerCup();
             
 
-            day.CustomerDecisions();
+            day.AddCustomers();
             // Run through each customer in customers list and run the method on the customer class
             foreach (Customer gameCustomer in day.customers)
             {

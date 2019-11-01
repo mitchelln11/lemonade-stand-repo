@@ -51,9 +51,9 @@ namespace Lemonade_Stand
 
         public void PricePerCup()
         {
-            Console.WriteLine("What would you like the price to be per cup? (In cents - Ex: 16 = 0.16)");
+            Console.WriteLine("What would you like the price to be per cup(Will be in cents)?");
             pricePerCup = Convert.ToInt32(Console.ReadLine());
-            if (pricePerCup >= 99)
+            if (pricePerCup > 99)
             {
                 Console.WriteLine("Sorry, the government says you can't charge over 99 cents per cup. Try again.");
                 PricePerCup();
