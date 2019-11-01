@@ -18,6 +18,7 @@ namespace Lemonade_Stand
         public List<Customer> customers;
         public double custRandomCap;
         public Random rand;
+        public double centCap;
 
         //constructor (Spawner)
         public Day()
@@ -55,26 +56,35 @@ namespace Lemonade_Stand
             }
         }
 
+        public double CentMatch()
+        {
+            centCap = rand.Next(25, 99);
+            return centCap;
+        }
+
         public void CustomerDecisions()
         {
             Console.WriteLine(weather.tempCondition);
 
-            //Try for loop up to 100 people i loop to try exactly 100
-            //foreach (Customer newCustomer in customers)
-            //{
-                if (weather.tempCondition < 95)
-                {
-                    Customer newCustomer = new Customer();
-                    customers.Add(newCustomer);
-                    customers.Add(newCustomer);
-                    customers.Add(newCustomer);
-                }
-                else
-                {
-                    Console.WriteLine("below the test");
-                }
-                //}
-           
+            for (int i = 0; i<6; i++)
+            {
+                Customer newCustomer = new Customer();
+                customers.Add(newCustomer);
+            }
+        }
+
+        public void PriceFactor(Recipe localRecipe)
+        {
+            if (localRecipe.pricePerCup < centCap)
+            {
+                Console.WriteLine(centCap + " Ja");
+                //return true;  ? Why can't I return? Even when it's not void
+            }
+            else
+            {
+                Console.WriteLine(centCap + " Nein");
+                //return false; ? Why can't I return? Even when it's not void
+            }
         }
 
     }
