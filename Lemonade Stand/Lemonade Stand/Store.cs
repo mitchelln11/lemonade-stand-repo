@@ -23,13 +23,7 @@ namespace Lemonade_Stand
             pricePerCup = 0.05;
         }
 
-
-
-
         // DON'T FORGET TO ADD CONDITIONAL IF THERE ISN'T ENOUGH MONEY IN THE WALLET
-
-
-
 
         //member methods (Can Do)
         // --------------------------------Lemon Section------------------------------------------------
@@ -45,8 +39,6 @@ namespace Lemonade_Stand
             player.wallet.WalletTotal = player.wallet.WalletTotal - lemonTotal;
             Console.WriteLine(player.wallet.WalletTotal + " dollars remaining \n");
             AddLemonsInv(player, lemonAmountPrompt);
-            // update player's inventory
-
         }
 
         public double LemonMath(int lemonAmount)

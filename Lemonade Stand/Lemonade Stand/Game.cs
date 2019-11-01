@@ -69,8 +69,6 @@ namespace Lemonade_Stand
             day.weather.SelectWeather();
             day.weather.SelectTemperature();
 
-            //day.CustomerDecisions(); // Just going here early for testing purposes
-
             Store store = new Store();
             store.AmountOfLemons(player);
             store.AmountOfSugarCubes(player);
@@ -79,19 +77,18 @@ namespace Lemonade_Stand
 
             player.recipe.CreateRecipe(player.inventory);
             player.recipe.PricePerCup();
-            
 
-            day.AddCustomers();
+            Random rand = new Random();
+            day.AddCustomers(rand);
             // Run through each customer in customers list and run the method on the customer class
             foreach (Customer gameCustomer in day.customers)
             {
-                day.CentMatch();
-                day.PriceFactor(player.recipe);
+                gameCustomer.CentMatch();
+                gameCustomer.PriceFactor(player.recipe, player.wallet);
             }
             
             player.UpdateInventory(); // On here instead of inventory because player is a shared parent.
             player.FillPitcher();
-
 
             Console.ReadLine();
         }
