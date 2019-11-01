@@ -9,8 +9,11 @@ namespace Lemonade_Stand
     class Game
     {
         //member variables (Has A)
-        public Player player;
+        private Player player;
         public Day day;
+        private List<Day> days;
+        private int totalDays;
+        private int dayMinimum;
         public Recipe localRecipe;
         public int currentDay;
         public double lemonadePrice;
@@ -18,23 +21,31 @@ namespace Lemonade_Stand
         //constructor (Spawner)
         public Game()
         {
+            days = new List<Day>();
+            dayMinimum = 7;
         }
 
-        //public void PriceFactor()
-        //{
-        //    if (pricePerCup > 5)
-        //    {
-        //        Console.WriteLine("vjkdvkjvjdvndvdnvdnvio");
-        //        //return true;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Nein");
-        //        //return false;
-        //    }
-        // }
-
         //member methods (Can Do)
+        private void DaySet()
+        {
+            Console.WriteLine("How many days do you want to play for? You must play for at least 7 days.");
+            totalDays = Convert.ToInt32(Console.ReadLine());
+
+            if (totalDays >= dayMinimum)
+            {
+                for (int currentDay = 0; currentDay < totalDays; currentDay++)
+                {
+                    Day day = new Day();
+                    days.Add(day);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Sorry, you must play at least 7 days.");
+                DaySet();
+            }
+        }
+
         public void RunGame()
         {
             Console.WriteLine("You are tasked to purchase ingredients for a lemonade stand. \n" +
@@ -46,7 +57,7 @@ namespace Lemonade_Stand
             player.AskName();
 
             day = new Day();
-            day.DaySet();
+            DaySet();
             day.weather.SelectWeather();
             day.weather.SelectTemperature();
 
