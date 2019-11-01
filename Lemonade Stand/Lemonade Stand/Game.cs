@@ -26,18 +26,21 @@ namespace Lemonade_Stand
         }
 
         //member methods (Can Do)
+
         private void DaySet()
         {
             Console.WriteLine("How many days do you want to play for? You must play for at least 7 days.");
-            totalDays = Convert.ToInt32(Console.ReadLine());
+            int potentialdays = Convert.ToInt32(Console.ReadLine());
 
-            if (totalDays >= dayMinimum)
+            if (potentialdays >= dayMinimum)
             {
-                for (int currentDay = 0; currentDay < totalDays; currentDay++)
-                {
-                    Day day = new Day();
-                    days.Add(day);
-                }
+                totalDays = potentialdays;
+                //for (int currentDay = 0; currentDay < totalDays; currentDay++)
+                //{
+                //    Day day = new Day();
+                //    days.Add(day);
+                //    Console.WriteLine(day);
+                //}
             }
             else
             {
@@ -46,13 +49,27 @@ namespace Lemonade_Stand
             }
         }
 
-        public void RunGame()
+        public void IncrementDay()
+        {
+            for (int currentDay = 0; currentDay < totalDays; currentDay++)
+            {
+                Day day = new Day();
+                days.Add(day);
+                RunGame();
+                Console.ReadLine();
+            }
+        }
+
+        public void IntroPrompt()
         {
             Console.WriteLine("You are tasked to purchase ingredients for a lemonade stand. \n" +
                 "Apply your purchased ingredients to create the right recipe for success. \n" +
                 "Weather will be a factor. " +
                 "You have 7 days to turn a profit. \n");
+        }
 
+        public void RunGame()
+        {
             player = new Player();
             player.AskName();
 
@@ -80,11 +97,8 @@ namespace Lemonade_Stand
                 day.PriceFactor(player.recipe);
             }
             
-
             player.UpdateInventory(); // On here instead of inventory because player is a shared parent.
             player.FillPitcher();
-
-            Console.ReadLine();
         }
     }
 }
