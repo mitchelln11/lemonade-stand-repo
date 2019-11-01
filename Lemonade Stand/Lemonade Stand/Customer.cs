@@ -21,7 +21,7 @@ namespace Lemonade_Stand
         //member methods (Can Do)
         public double CentMatch()
         {
-            centCap = rand.Next(20, 99);
+            centCap = rand.Next(16, 99);
             centCap = (centCap / 100); //Convert amount to cents
             return centCap;
         }
@@ -31,14 +31,13 @@ namespace Lemonade_Stand
         {
             if (localRecipe.pricePerCup < centCap)
             {
-                wallet.WalletTotal += wallet.WalletTotal + localRecipe.pricePerCup;
-                Console.WriteLine(centCap + " Purchased!");
+                wallet.WalletTotal = wallet.WalletTotal + localRecipe.pricePerCup;
+                Console.WriteLine("Purchased!");
             }
             else
             {
-                Console.WriteLine(centCap + " Nein");
+                Console.WriteLine("Was not willing to pay over " + centCap);
             }
-            Console.WriteLine(wallet.WalletTotal);
         }
     }
 }

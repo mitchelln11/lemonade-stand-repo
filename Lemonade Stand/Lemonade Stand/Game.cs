@@ -54,7 +54,7 @@ namespace Lemonade_Stand
 
         public void IncrementDay()
         {
-            for (currentDay = 1; currentDay < totalDays; currentDay++)
+            for (currentDay = 0; currentDay < totalDays; currentDay++)
             {
                 day = new Day(); // Needs to be instantiated here, inside loop, otherwise, it resets everytime.
                 days.Add(day);
@@ -65,7 +65,8 @@ namespace Lemonade_Stand
 
         public void RunGame()
         {
-            Console.WriteLine("Current Day: " + currentDay);
+            Console.WriteLine("Current Day: " + (currentDay + 1));
+            Console.WriteLine("Current Wallet Count: " + player.wallet.WalletTotal);
             day.weather.SelectWeather();
             day.weather.SelectTemperature();
 
@@ -88,6 +89,7 @@ namespace Lemonade_Stand
             }
             
             player.UpdateInventory(); // On here instead of inventory because player is a shared parent.
+            Console.WriteLine("End of day totals " + player.wallet.WalletTotal + " Press enter to continue");
             player.FillPitcher();
 
             Console.ReadLine();
