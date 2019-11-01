@@ -20,7 +20,6 @@ namespace Lemonade_Stand
         public int updatedIceTotal;
         public int pitcherAmount;
 
-
         //constructor (Spawner)
         public Player()
         {
@@ -44,7 +43,7 @@ namespace Lemonade_Stand
             updatedIceTotal = inventory.iceCubes.Count - inventory.iceCubes.Count;
             Console.WriteLine(updatedLemonTotal + " lemons remaining");
             Console.WriteLine(updatedSugarTotal + " Sugar Cubes remaining");
-            Console.WriteLine(updatedIceTotal + " Ice Cubes remaining");
+            Console.WriteLine("Remaining Ice has melted");
         }
 
         public void FillPitcher()

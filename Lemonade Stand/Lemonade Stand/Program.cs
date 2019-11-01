@@ -12,8 +12,8 @@ namespace Lemonade_Stand
         {
             Game game = new Game();
             game.IntroPrompt();
+            game.DaySet();
             game.IncrementDay();
-            //game.RunGame();
         }
     }
 }

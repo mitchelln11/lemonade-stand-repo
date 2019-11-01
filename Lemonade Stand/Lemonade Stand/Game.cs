@@ -27,8 +27,16 @@ namespace Lemonade_Stand
         }
 
         //member methods (Can Do)
+        public void IntroPrompt()
+        {
+            Console.WriteLine("You are tasked to purchase ingredients for a lemonade stand. \n" +
+                "Apply your purchased ingredients to create the right recipe for success. \n" +
+                "Weather will be a factor. " +
+                "You have 7 days to turn a profit. \n");
+            player.AskName();
+        }
 
-        private void DaySet()
+        public void DaySet()
         {
             Console.WriteLine("How many days do you want to play for? You must play for at least 7 days.");
             int potentialdays = Convert.ToInt32(Console.ReadLine());
@@ -48,26 +56,15 @@ namespace Lemonade_Stand
         {
             for (currentDay = 1; currentDay < totalDays; currentDay++)
             {
-                Day day = new Day();
+                day = new Day(); // Needs to be instantiated here, inside loop, otherwise, it resets everytime.
                 days.Add(day);
+                RunGame();
             }
-            RunGame();
         }
 
-
-        public void IntroPrompt()
-        {
-            Console.WriteLine("You are tasked to purchase ingredients for a lemonade stand. \n" +
-                "Apply your purchased ingredients to create the right recipe for success. \n" +
-                "Weather will be a factor. " +
-                "You have 7 days to turn a profit. \n");
-                player.AskName();
-        }
 
         public void RunGame()
         {
-            day = new Day();
-            DaySet();
             Console.WriteLine("Current Day: " + currentDay);
             day.weather.SelectWeather();
             day.weather.SelectTemperature();
@@ -94,6 +91,7 @@ namespace Lemonade_Stand
             
             player.UpdateInventory(); // On here instead of inventory because player is a shared parent.
             player.FillPitcher();
+
 
             Console.ReadLine();
         }
