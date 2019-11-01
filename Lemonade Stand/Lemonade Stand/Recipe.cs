@@ -34,7 +34,6 @@ namespace Lemonade_Stand
                 Console.WriteLine(amountOfLemons + " lemons added to each pitcher \n");
             }
             
-
             Console.WriteLine("How many sugar cubes per pitcher?");
             amountOfSugarCubes = Convert.ToInt32(Console.ReadLine());
             if (inventory.sugarCubes.Count >= amountOfSugarCubes);

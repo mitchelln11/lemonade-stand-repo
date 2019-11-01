@@ -13,7 +13,7 @@ namespace Lemonade_Stand
             Game game = new Game();
             game.IntroPrompt();
             game.IncrementDay();
-            game.RunGame();
+            //game.RunGame();
         }
     }
 }

@@ -15,20 +15,16 @@ namespace Lemonade_Stand
         //private int dayMinimum;
         public List<string> names;
         public List<Customer> customers;
-        public double custRandomCap;
+        public int dailyCust;
         public Random rand;
         public double centCap;
 
         //constructor (Spawner)
         public Day()
         {
-            //dayOfWeek = dayName;
-            //days = new List<Day>();
             customers = new List<Customer>();
-            //dayMinimum = 7;
             weather = new Weather();
             rand = new Random();
-            //names = new List<string>() { "Ralph", "Mike", "Thomas", "Rachel", "Eric", "Michelle", "Nicole", "Maggie", "Katie", "Paige", "Bailey", "Jesus", "Sven" };
         }
 
         //member methods (Can Do)
@@ -38,11 +34,11 @@ namespace Lemonade_Stand
             return centCap;
         }
 
+
         public void CustomerDecisions()
         {
-            Console.WriteLine(weather.tempCondition);
-
-            for (int i = 0; i<6; i++)
+            //Instead of creating a method to generate a random number, just generate inside the spot where it's needed
+            for (int i = 0; i< rand.Next(50, 150); i++)
             {
                 Customer newCustomer = new Customer();
                 customers.Add(newCustomer);

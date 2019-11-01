@@ -52,7 +52,6 @@ namespace Lemonade_Stand
             if (pitcher.cupsLeftInPitcher <= pitcher.cupsPerPitcher)
             {
                 pitcherAmount = pitcher.cupsPerPitcher - pitcher.cupsLeftInPitcher;
-                //Console.WriteLine(pitcherAmount);
             }
         }
     }

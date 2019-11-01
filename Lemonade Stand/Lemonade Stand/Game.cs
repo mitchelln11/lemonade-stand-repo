@@ -23,6 +23,7 @@ namespace Lemonade_Stand
         {
             days = new List<Day>();
             dayMinimum = 7;
+            player = new Player();
         }
 
         //member methods (Can Do)
@@ -55,10 +56,10 @@ namespace Lemonade_Stand
             {
                 Day day = new Day();
                 days.Add(day);
-                RunGame();
-                Console.ReadLine();
             }
+            RunGame();
         }
+
 
         public void IntroPrompt()
         {
@@ -66,13 +67,11 @@ namespace Lemonade_Stand
                 "Apply your purchased ingredients to create the right recipe for success. \n" +
                 "Weather will be a factor. " +
                 "You have 7 days to turn a profit. \n");
+                player.AskName();
         }
 
         public void RunGame()
         {
-            player = new Player();
-            player.AskName();
-
             day = new Day();
             DaySet();
             day.weather.SelectWeather();
@@ -88,6 +87,7 @@ namespace Lemonade_Stand
 
             player.recipe.CreateRecipe(player.inventory);
             player.recipe.PricePerCup();
+            
 
             day.CustomerDecisions();
             // Run through each customer in customers list and run the method on the customer class
@@ -99,6 +99,8 @@ namespace Lemonade_Stand
             
             player.UpdateInventory(); // On here instead of inventory because player is a shared parent.
             player.FillPitcher();
+
+            Console.ReadLine();
         }
     }
 }
