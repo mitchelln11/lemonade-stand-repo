@@ -13,7 +13,9 @@ namespace Lemonade_Stand
         public List<Customer> customers;
         public int dailyCust;
         public Random rand;
-        
+        public Customer customer;
+        public int buyers;
+
 
         //constructor (Spawner)
         public Day()
@@ -24,14 +26,30 @@ namespace Lemonade_Stand
         }
 
         //member methods (Can Do)
-        public void AddCustomers(Random randFromGame)
+        public int AddCustomers(Random randFromGame)
         {
-            dailyCust = rand.Next(8, 10);// Must run a random number before the loop
+            if ((weather.tempCondition >= 95) && (weather.tempCondition < 105) )
+            {
+                dailyCust = rand.Next(50, 125);// Must run a random number before the loop
+            }
+            else if ( (weather.tempCondition >= 80) && (weather.tempCondition <= 94) )
+            {
+                dailyCust = rand.Next(115, 150);
+            }
+            else if ((weather.tempCondition >= 70) && (weather.tempCondition <= 79))
+            {
+                dailyCust = rand.Next(95, 145);
+            }
+            else if (weather.tempCondition <= 69)
+            {
+                dailyCust = rand.Next(45, 60);
+            }
             for (int i = 0; i<dailyCust; i++)
             {
                 Customer newCustomer = new Customer(randFromGame);
                 customers.Add(newCustomer);
             }
+            return dailyCust;
         }
     }
 }

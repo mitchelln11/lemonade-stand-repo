@@ -43,15 +43,7 @@ namespace Lemonade_Stand
             updatedIceTotal = inventory.iceCubes.Count - inventory.iceCubes.Count;
             Console.WriteLine(updatedLemonTotal + " lemons remaining");
             Console.WriteLine(updatedSugarTotal + " Sugar Cubes remaining");
-            Console.WriteLine("Remaining Ice has melted");
-        }
-
-        public void FillPitcher()
-        {
-            if (pitcher.cupsLeftInPitcher <= pitcher.cupsPerPitcher)
-            {
-                pitcherAmount = pitcher.cupsPerPitcher - pitcher.cupsLeftInPitcher;
-            }
+            Console.WriteLine("Remaining Ice has melted. Press enter to continue");
         }
     }
 }

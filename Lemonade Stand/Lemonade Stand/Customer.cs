@@ -9,8 +9,10 @@ namespace Lemonade_Stand
     class Customer
     {
         //member variables(Has A)
+        public Weather weather;
+        public Wallet wallet;
         public Random rand;
-        public double centCap;
+        public double centCap; 
 
         //constructor (Spawner)
         public Customer(Random randFromGame)
@@ -26,17 +28,20 @@ namespace Lemonade_Stand
             return centCap;
         }
 
+        
 
-        public void PriceFactor(Recipe localRecipe, Wallet wallet)
+        public bool PriceFactor(Recipe localRecipe, Wallet wallet)
         {
             if (localRecipe.pricePerCup < centCap)
             {
                 wallet.WalletTotal = wallet.WalletTotal + localRecipe.pricePerCup;
                 Console.WriteLine("Purchased!");
+                return true;
             }
             else
             {
                 Console.WriteLine("Was not willing to pay over " + centCap);
+                return false;
             }
         }
     }

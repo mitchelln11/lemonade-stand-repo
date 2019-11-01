@@ -10,6 +10,7 @@ namespace Lemonade_Stand
     {
         //member variables (Has A)
         private Player player;
+        public Customer customer;
         public Day day;
         private List<Day> days;
         private int totalDays;
@@ -24,6 +25,7 @@ namespace Lemonade_Stand
             days = new List<Day>();
             dayMinimum = 7;
             player = new Player();
+            day = new Day();
         }
 
         //member methods (Can Do)
@@ -85,13 +87,15 @@ namespace Lemonade_Stand
             foreach (Customer gameCustomer in day.customers)
             {
                 gameCustomer.CentMatch();
-                gameCustomer.PriceFactor(player.recipe, player.wallet);
+                bool didBuy = gameCustomer.PriceFactor(player.recipe, player.wallet);
+                if (didBuy == true)
+                {
+                    day.buyers++;
+                }
             }
-            
+            Console.WriteLine("\nEnd of day totals: " + Math.Floor(player.wallet.WalletTotal) + " dollars.");
+            Console.WriteLine(day.buyers + " out of " + day.dailyCust + " potential customers. \n");
             player.UpdateInventory(); // On here instead of inventory because player is a shared parent.
-            Console.WriteLine("End of day totals " + player.wallet.WalletTotal + " Press enter to continue");
-            player.FillPitcher();
-
             Console.ReadLine();
         }
     }
