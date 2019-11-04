@@ -11,6 +11,7 @@ namespace Lemonade_Stand
         //member variables (Has A)
         private double walletTotal = 20.00;
         public double WalletTotal;
+        public double walletTransfers;
 
         //constructor (Spawner)
         public Wallet()
@@ -20,5 +21,9 @@ namespace Lemonade_Stand
 
 
         //member methods (Can Do)
+        public void MakeWalletCalculation()
+        {
+            walletTransfers = WalletTotal - walletTotal;
+        }
     }
 }

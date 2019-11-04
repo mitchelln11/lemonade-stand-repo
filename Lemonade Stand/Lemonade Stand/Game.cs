@@ -10,14 +10,11 @@ namespace Lemonade_Stand
     {
         //member variables (Has A)
         private Player player;
-        public Customer customer;
         public Day day;
         private List<Day> days;
         private int totalDays;
         private int dayMinimum;
-        public Recipe localRecipe;
         public int currentDay;
-        public double lemonadePrice;
 
         //constructor (Spawner)
         public Game()
@@ -64,6 +61,33 @@ namespace Lemonade_Stand
             }
         }
 
+        public void GameTotals()
+        {
+            if ( player.wallet.walletTransfers > player.wallet.WalletTotal )
+            {
+               // player.wallet.MakeWalletCalculation();
+                Console.WriteLine("Congratulations, you made " + player.wallet.walletTransfers);
+                Console.ReadLine();
+            }
+            else if(player.wallet.walletTransfers == player.wallet.WalletTotal)
+            {
+                Console.WriteLine("You broke even.");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Sorry, you lost money!");
+                Console.ReadLine();
+            }
+        }
+
+        public void EndDayResults(Player player)
+        {
+            Console.WriteLine("\nEnd of day totals: " + Math.Floor(player.wallet.WalletTotal) + " dollars.");
+            Console.WriteLine(day.buyers + " out of " + day.dailyCust + " potential customers. \n");
+            player.inventory.UpdateInventory(player, player.wallet); // On here instead of inventory because player is a shared parent.
+        }
+
 
         public void RunGame()
         {
@@ -93,10 +117,7 @@ namespace Lemonade_Stand
                     day.buyers++;
                 }
             }
-            Console.WriteLine("\nEnd of day totals: " + Math.Floor(player.wallet.WalletTotal) + " dollars.");
-            Console.WriteLine(day.buyers + " out of " + day.dailyCust + " potential customers. \n");
-            player.UpdateInventory(); // On here instead of inventory because player is a shared parent.
-            Console.ReadLine();
+            EndDayResults(player);
         }
     }
 }

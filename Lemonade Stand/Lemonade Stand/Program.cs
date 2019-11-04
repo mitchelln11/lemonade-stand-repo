@@ -14,6 +14,7 @@ namespace Lemonade_Stand
             game.IntroPrompt();
             game.DaySet();
             game.IncrementDay();
+            game.GameTotals();
         }
     }
 }

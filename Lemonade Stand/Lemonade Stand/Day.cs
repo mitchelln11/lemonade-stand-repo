@@ -13,9 +13,7 @@ namespace Lemonade_Stand
         public List<Customer> customers;
         public int dailyCust;
         public Random rand;
-        public Customer customer;
         public int buyers;
-
 
         //constructor (Spawner)
         public Day()

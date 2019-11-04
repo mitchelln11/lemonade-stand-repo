@@ -10,12 +10,10 @@ namespace Lemonade_Stand
     {
 
         //member variables (Has A)
-        private double cupPrice;
 
         //constructor (Spawner)
         public Cup()
         {
-            cupPrice = 0.60;
         }
 
         //member methods (Can Do)

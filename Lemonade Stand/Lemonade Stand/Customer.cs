@@ -9,8 +9,6 @@ namespace Lemonade_Stand
     class Customer
     {
         //member variables(Has A)
-        public Weather weather;
-        public Wallet wallet;
         public Random rand;
         public double centCap; 
 
@@ -27,8 +25,6 @@ namespace Lemonade_Stand
             centCap = (centCap / 100); //Convert amount to cents
             return centCap;
         }
-
-        
 
         public bool PriceFactor(Recipe localRecipe, Wallet wallet)
         {
